@@ -115,7 +115,9 @@ services:
   - name: mongodb-all.service
     uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/master/service-files/mongodb-all.service
   - name: elasticsearch.service
-    uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/elasticSearch/service-files/elasticsearch.service
+    uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/elasticSearch/service-files/elasticsearch@.service
+    count: 1
   - name: elasticsearch-sidekick.service
-    uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/elasticSearch/service-files/elasticsearch-sidekick.service
+    uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/elasticSearch/service-files/elasticsearch-sidekick@.service
+    count: 1
 
