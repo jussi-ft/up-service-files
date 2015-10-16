@@ -2,7 +2,7 @@
 Description=UP REST Storage - Elasticsearch
 After=docker.service kafka.service
 Requires=docker.service
-Wants=kafka.service wp-notifier-sidekick@%i.service
+Wants=elasticsearch-sidekick@%i.service
 
 [Service]
 TimeoutStartSec=0
