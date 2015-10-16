@@ -120,4 +120,7 @@ services:
   - name: elasticsearch-sidekick@.service
     uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/elasticSearch/service-files/elasticsearch-sidekick@.service
     count: 1
+  - name: restorage-es@.service
+    uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/elasticSearch/service-files/restorage-es@.service
+    count: 1
 
