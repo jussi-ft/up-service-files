@@ -126,4 +126,7 @@ services:
   - name: kibana@.service
     uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/elasticSearch/service-files/kibana@.service
     count: 1
+  - name: kibana-sidekick@.service
+    uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/elasticSearch/service-files/kibana-sidekick@.service
+    count: 1
 
