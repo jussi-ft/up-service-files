@@ -101,7 +101,7 @@ services:
   - name: skydns.service
     uri: https://raw.githubusercontent.com/Financial-Times/fleet/master/service-files/skydns.service
   - name: vulcan.service
-    uri: https://raw.githubusercontent.com/Financial-Times/fleet/master/service-files/vulcan.service
+    uri: https://raw.githubusercontent.com/Financial-Times/fleet/elasticSearch/service-files/vulcan.service
   - name: methodeapi-endpoint.service
     uri: https://raw.githubusercontent.com/Financial-Times/fleet/master/service-files/methodeapi-endpoint.service
   - name: diamond.service
