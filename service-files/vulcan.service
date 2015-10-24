@@ -10,7 +10,7 @@ TimeoutStartSec=0
 KillMode=none
 ExecStartPre=-/bin/bash -c '/usr/bin/docker kill %p > /dev/null 2>&1'
 ExecStartPre=-/bin/bash -c '/usr/bin/docker rm %p > /dev/null 2>&1'
-ExecStartPre=/usr/bin/docker pull mailgun/vulcand:v0.8.0-beta.3
+ExecStartPre=/usr/bin/docker pull angelx/ft-vulcan
 ExecStart=/bin/bash -c "\
   export ETCD_IP=$(/usr/bin/ifconfig docker0 | sed -n '2 p' | awk '{print $2}' | cut -d':' -f2); \
   echo $ETCD_IP; \
