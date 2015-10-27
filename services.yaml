@@ -129,4 +129,6 @@ services:
   - name: kibana-sidekick@.service
     uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/elasticSearch/service-files/kibana-sidekick@.service
     count: 1
+  - name: vulcan-config-builder.service
+    uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/elasticSearch/service-files/vulcan-config-builder.service
 
