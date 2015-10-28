@@ -4,9 +4,6 @@ BindsTo=kibana@%i.service
 After=kibana@%i.service
 
 [Service]
-ExecStartPre=/bin/sh -c "\
-  etcdctl mkdir /ft/services/kibana/servers/ \
-"
 ExecStart=/bin/sh -c "\
    while true; do \
     export PORT=$(echo $(/usr/bin/docker port kibana-%i 5601) | cut -d':' -f2); \
