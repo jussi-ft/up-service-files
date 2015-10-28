@@ -123,6 +123,9 @@ services:
   - name: restorage-es@.service
     uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/elasticSearch/service-files/restorage-es@.service
     count: 1
+  - name: restorage-es-sidekick@.service
+    uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/elasticSearch/service-files/restorage-es-sidekick@.service
+    count: 1
   - name: kibana@.service
     uri: https://raw.githubusercontent.com/Financial-Times/up-service-files/elasticSearch/service-files/kibana@.service
     count: 1
