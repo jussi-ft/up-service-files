@@ -6,7 +6,7 @@ After=restorage-es@%i.service
 [Service]
 ExecStartPre=/bin/sh -c "\
   etcdctl set   /ft/services/restorage-es/healthcheck     true \
-  etcdctl mkdir /ft/services/restorage-es/servers \
+  etcdctl mkdir /ft/services/restorage-es/servers
 ExecStart=/bin/sh -c "\
    while true; do \
     export PORT=$(echo $(/usr/bin/docker port restorage-es-%i 8080) | cut -d':' -f2); \
