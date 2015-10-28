@@ -10,7 +10,7 @@ ExecStartPre=/bin/sh -c "\
 ExecStart=/bin/sh -c "\
   while true; do \
     export PORT=$(/usr/bin/docker port elasticsearch-%i 9200 | cut -d':' -f2); \
-    etcdctl set /ft/services/elasticsearch/servers/%p "http://$HOSTNAME:$PORT" --ttl 600
+    etcdctl set /ft/services/elasticsearch/servers/%p "http://$HOSTNAME:$PORT" --ttl 600; \
     sleep 120; \
   done"
 ExecStop=/usr/bin/etcdctl rm /ft/services/elasticsearch/servers/%p
