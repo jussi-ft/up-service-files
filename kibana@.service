@@ -11,10 +11,10 @@ TimeoutStartSec=0
 KillMode=none
 ExecStartPre=-/bin/bash -c '/usr/bin/docker kill %p-%i > /dev/null 2>&1'
 ExecStartPre=-/bin/bash -c '/usr/bin/docker rm %p-%i > /dev/null 2>&1'
-ExecStartPre=/usr/bin/docker pull kibana
+ExecStartPre=/usr/bin/docker pull coco/coco-kibana
 
 ExecStart=/bin/sh -c '\
-    /usr/bin/docker run --rm --name %p-%i -P --env "ELASTICSEARCH_URL=http://$HOSTNAME:8080/__elasticsearch" kibana \
+    /usr/bin/docker run --rm --name %p-%i -P --env "ELASTICSEARCH_URL=http://$HOSTNAME:8080/__elasticsearch" coco/coco-kibana \
 '
 ExecStop=/usr/bin/docker stop -t 3 %p-%i
 Restart=on-failure
