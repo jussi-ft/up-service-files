@@ -85,6 +85,10 @@ services:
     count: 1
   - name: restorage-es-sidekick@.service
     count: 1
+  - name: restorage-mongo@.service
+    count: 1
+  - name: restorage-mongo-sidekick@.service
+    count: 1
   - name: kibana@.service
     count: 1
   - name: kibana-sidekick@.service
