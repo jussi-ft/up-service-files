@@ -93,7 +93,6 @@ services:
     count: 1
   - name: kibana-sidekick@.service
     count: 1
-  - name: vulcan-config-builder.service
   - name: mongo-backup.service
     desiredState: loaded
   - name: mongo-backup.timer
