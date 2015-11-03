@@ -14,9 +14,8 @@ ExecStartPre=-/bin/bash -c '/usr/bin/docker rm %p-%i > /dev/null 2>&1'
 ExecStartPre=/usr/bin/docker pull coco/up-restorage
 
 ExecStart=/bin/sh -c '\
-    export ES_HOST=$(/usr/bin/etcdctl get /ft/config/elasticsearch/1/host); \
-    export ES_PORT=$(/usr/bin/etcdctl get /ft/config/elasticsearch/1/port); \
-    /usr/bin/docker run --rm --name %p-%i -P coco/up-restorage /bin/bash -c "/up-restorage --id-map=organisations:uuid,content:uuid elastic http://$ES_HOST:$ES_PORT"'
+    export ES_ENDPOINT=$(etcdctl get /ft/services/elasticsearch/servers/1); \
+    /usr/bin/docker run --rm --name %p-%i -P coco/up-restorage /bin/bash -c "/up-restorage --id-map=organisations:uuid,content:uuid elastic http://$ES_ENDPOINT"'
 ExecStop=/usr/bin/docker stop -t 3 %p-%i
 Restart=on-failure
 RestartSec=60
