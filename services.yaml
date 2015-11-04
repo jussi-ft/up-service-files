@@ -70,7 +70,6 @@ services:
   - name: zookeeper.service
   - name: splunk-forwarder.service
   - name: vulcan.service
-  - name: vulcan-config-builder.service
   - name: methodeapi-endpoint.service
   - name: diamond.service
   - name: elb-presence.service
