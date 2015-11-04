@@ -6,12 +6,12 @@ After=neo4j.service
 [Service]
 ExecStart=/bin/sh -c "\
   while true; do \
-    export PORT=$(/usr/bin/docker port neo4j 7474 | cut -d':' -f2); \
+    export PORT=$(/usr/bin/docker port neo4j-%i 7474 | cut -d':' -f2); \
     etcdctl set /ft/services/neo4j/servers/%i "http://$HOSTNAME:$PORT" --ttl 600; \
     sleep 120; \
   done"
 ExecStop=/usr/bin/etcdctl rm /ft/services/neo4j/servers/%i
 
 [X-Fleet]
-MachineOf=neo4j.service
+MachineOf=neo4j@%i.service
 
