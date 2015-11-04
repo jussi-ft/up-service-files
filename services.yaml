@@ -61,6 +61,10 @@ services:
     count: 1
   - name: kafka-rest-proxy.service
   - name: kafka-rest-proxy-sidekick.service
+  - name: neo4j@.service
+    count: 1
+  - name: neo4j-sidekick@.service
+    count: 1
   - name: mongodb-all.service          
   - name: system-healthcheck.service
   - name: system-healthcheck-sidekick.service
