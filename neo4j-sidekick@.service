@@ -1,7 +1,7 @@
 [Unit]
 Description=Neo4j Sidekick
-BindsTo=neo4j.service
-After=neo4j.service
+BindsTo=neo4j@i.service
+After=neo4j@%i.service
 
 [Service]
 ExecStart=/bin/sh -c "\
