@@ -6,7 +6,7 @@ services:
     count: 3
   - name: mongodb-configurator.service
   - name: cms-notifier@.service
-    version: v27
+    version: v28
     count: 2
   - name: cms-notifier-sidekick@.service
     count: 2
@@ -61,6 +61,10 @@ services:
     count: 1
   - name: kafka-rest-proxy.service
   - name: kafka-rest-proxy-sidekick.service
+  - name: neo4j@.service
+    count: 1
+  - name: neo4j-sidekick@.service
+    count: 1
   - name: mongodb-all.service          
   - name: system-healthcheck.service
   - name: system-healthcheck-sidekick.service
@@ -69,7 +73,6 @@ services:
   - name: kafka.service
   - name: zookeeper.service
   - name: splunk-forwarder.service
-  - name: skydns.service
   - name: vulcan.service
   - name: methodeapi-endpoint.service
   - name: diamond.service
@@ -85,13 +88,17 @@ services:
     count: 1
   - name: restorage-es-sidekick@.service
     count: 1
+  - name: restorage-mongo@.service
+    count: 1
+  - name: restorage-mongo-sidekick@.service
+    count: 1
   - name: kibana@.service
     count: 1
   - name: kibana-sidekick@.service
     count: 1
-  - name: vulcan-config-builder.service
   - name: mongo-backup.service
     desiredState: loaded
   - name: mongo-backup.timer
   - name: tunnel-registrator.service
   - name: publish-availability-monitor.service
+  - name: vulcan-config-builder.service

@@ -1,8 +1,8 @@
 [Unit]
-Description=Elasticsearch
+Description=Neo4j
 After=docker.service
 Requires=docker.service
-Wants=elasticsearch-sidekick@%i.service
+Wants=neo4j-sidekick@%i.service
 
 [Service]
 TimeoutStartSec=0
@@ -11,13 +11,13 @@ TimeoutStartSec=0
 KillMode=none
 ExecStartPre=-/bin/bash -c '/usr/bin/docker kill %p-%i > /dev/null 2>&1'
 ExecStartPre=-/bin/bash -c '/usr/bin/docker rm %p-%i > /dev/null 2>&1'
-ExecStartPre=/usr/bin/docker pull coco/coco-elasticsearch
+ExecStartPre=/usr/bin/docker pull neo4j:2.3.0
 ExecStart=/bin/sh -c "\
-  /usr/bin/docker run --rm --name %p-%i -v /vol/elasticsearch:/usr/share/elasticsearch/data -P coco/coco-elasticsearch -Dnetwork.host=0.0.0.0"
+  /usr/bin/docker run --rm --name %p-%i -v /vol/%p-%i/:/data -p 7474 neo4j:2.3.0"
+
 ExecStop=/usr/bin/docker stop -t 3 %p-%i
 Restart=on-failure
 RestartSec=60
 
 [X-Fleet]
-Conflicts=%p@*.service
 MachineMetadata=persistent_tag=%i
