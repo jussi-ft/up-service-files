@@ -110,3 +110,4 @@ services:
   - name: tunnel-registrator.service
   - name: publish-availability-monitor.service
   - name: vulcan-config-builder.service
+  - name: elb-dns-registrator.service
