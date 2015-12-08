@@ -6,12 +6,12 @@ services:
     count: 3
   - name: mongodb-configurator.service
   - name: cms-notifier@.service
-    version: v28
+    version: v29
     count: 2
   - name: cms-notifier-sidekick@.service
     count: 2
   - name: methode-content-importer@.service
-    version: v30
+    version: v36
     count: 2
   - name: methode-content-importer-sidekick@.service
     count: 2
@@ -41,7 +41,7 @@ services:
   - name: methode-image-model-transformer-sidekick@.service
     count: 2
   - name: nativerw@.service
-    version: v27
+    version: v35
     count: 2
   - name: nativerw-sidekick@.service
     count: 2
@@ -59,8 +59,15 @@ services:
     count: 1
   - name: synthetic-image-publication-monitor-aws-sidekick@.service
     count: 1
+  - name: synthetic-image-publication-monitor-coco@.service
+    version: v33
+    count: 1
+  - name: synthetic-image-publication-monitor-coco-sidekick@.service
+    count: 1
   - name: coco-kafka-bridge@.service
     count: 2
+    version: v4
+    sequentialDeployment: true
   - name: coco-kafka-bridge-sidekick@.service
     count: 2
   - name: kafka-rest-proxy.service
@@ -86,7 +93,6 @@ services:
   - name: diamond.service
   - name: elb-presence.service
   - name: image-cleaner.service
-  - name: image-cleaner.timer
   - name: mongodb-all.service
   - name: elasticsearch@.service
     count: 1
@@ -108,6 +114,20 @@ services:
     desiredState: loaded
   - name: mongo-backup.timer
   - name: tunnel-registrator.service
-  - name: publish-availability-monitor.service
-  - name: vulcan-config-builder.service
   - name: elb-dns-registrator.service
+  - name: publish-availability-monitor@.service
+    count: 1
+    version: 0.11.0
+  - name: publish-availability-monitor-sidekick@.service
+    count: 1
+  - name: vulcan-config-builder.service
+  - name: notifications-rw@.service
+    count: 2
+    version: v13
+  - name: notifications-rw-sidekick@.service
+    count: 2
+  - name: document-store-api@.service
+    count: 2
+    version: v27
+  - name: document-store-api-sidekick@.service
+    count: 2
