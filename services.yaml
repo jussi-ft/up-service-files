@@ -75,7 +75,8 @@ services:
   sequentialDeployment: true
 - name: elb-dns-registrator.service
   version: v2.0.1
-- name: elb-presence.service
+- name: elb-presence@.service
+  count: 2
 - name: enriched-content-read-api-sidekick@.service
   count: 2
 - name: enriched-content-read-api@.service
@@ -93,6 +94,16 @@ services:
 - name: kafka-rest-proxy-sidekick.service
 - name: kafka-rest-proxy.service
 - name: kafka.service
+- name: locations-rw-neo4j-sidekick@.service
+  count: 2
+- name: locations-rw-neo4j@.service
+  version: v1.0.0
+  count: 2
+- name: locations-transformer-sidekick@.service
+  count: 2
+- name: locations-transformer@.service
+  version: v1.0.0
+  count: 2
 - name: methode-article-transformer-sidekick@.service
   count: 2
 - name: methode-article-transformer@.service
@@ -179,6 +190,11 @@ services:
   count: 1
 - name: restorage-mongo@.service
   count: 1
+- name: roles-rw-neo4j-sidekick@.service
+  count: 2
+- name: roles-rw-neo4j@.service
+  version: v0.0.18
+  count: 2
 - name: sections-rw-neo4j-sidekick@.service
   count: 2
 - name: sections-rw-neo4j@.service
@@ -251,7 +267,7 @@ services:
 - name: varnish-sidekick@.service
   count: 2
 - name: varnish@.service
-  version: v37
+  version: v39
   count: 2
   sequentialDeployment: true
 - name: vulcan-config-builder.service
