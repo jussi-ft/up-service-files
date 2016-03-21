@@ -187,6 +187,14 @@ services:
 - name: notifications-rw@.service
   version: v30
   count: 2
+- name: organisations-rw-neo4j-sidekick@.service
+  count: 2
+- name: organisations-rw-neo4j@.service
+  version: v0.0.34
+- name: organisations-rw-neo4j-red-sidekick@.service
+  count: 2
+- name: organisations-rw-neo4j-red@.service
+  version: v0.0.34
 - name: people-rw-neo4j-red-sidekick@.service
   count: 2
 - name: people-rw-neo4j-red@.service
@@ -196,14 +204,6 @@ services:
   count: 2
 - name: people-rw-neo4j@.service
   version: v0.0.54
-- name: organisations-rw-neo4j-red-sidekick@.service
-  count: 2
-- name: organisations-rw-neo4j-red-@.service
-  version: v0.0.34
-- name: organisations-rw-neo4j-sidekick@.service
-  count: 2
-- name: organisations-rw-neo4j@.service
-  version: v0.0.34
   count: 2
 - name: public-annotations-api-sidekick@.service
   count: 2
