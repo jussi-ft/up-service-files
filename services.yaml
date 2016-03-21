@@ -196,6 +196,12 @@ services:
   version: v1.0.6
   count: 2
   sequentialDeployment: true
+- name: public-organisations-api-sidekick@.service
+  count: 2
+- name: public-organisations-api@.service
+  version: v0.0.40
+  count: 2
+  sequentialDeployment: true
 - name: restorage-mongo-sidekick@.service
   count: 1
 - name: restorage-mongo@.service
