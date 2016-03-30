@@ -246,6 +246,12 @@ services:
   version: v0.0.41
   count: 2
   sequentialDeployment: true
+- name: public-concordances-api-sidekick@.service
+  count: 2
+- name: public-concordances-api@.service
+  version: v0.0.8
+  count: 2
+  sequentialDeployment: true
 - name: public-people-api-sidekick@.service
   count: 2
 - name: public-people-api@.service
@@ -260,7 +266,7 @@ services:
 - name: publish-availability-monitor-sidekick@.service
   count: 1
 - name: publish-availability-monitor@.service
-  version: v0.16.3
+  version: v0.17.0
   count: 1
 - name: restorage-mongo-sidekick@.service
   count: 1
