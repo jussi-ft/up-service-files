@@ -108,6 +108,7 @@ services:
 - name: image-cleaner.service
 - name: kafka-rest-proxy-sidekick.service
 - name: kafka-rest-proxy.service
+  version: v1.0.0
 - name: kafka.service
 - name: locations-rw-neo4j-blue-sidekick@.service
   count: 2
@@ -325,6 +326,7 @@ services:
   count: 1
 - name: system-healthcheck-sidekick.service
 - name: system-healthcheck.service
+  version: 1.0.1
 - name: topics-rw-neo4j-blue-sidekick@.service
   count: 2
 - name: topics-rw-neo4j-blue@.service
@@ -359,12 +361,12 @@ services:
 - name: v1-content-annotator-blue-sidekick@.service
   count: 1
 - name: v1-content-annotator-blue@.service
-  version: v22
+  version: v24
   count: 1
 - name: v1-content-annotator-red-sidekick@.service
   count: 1
 - name: v1-content-annotator-red@.service
-  version: v22
+  version: v24
   count: 1
 - name: v1-suggestor-sidekick@.service
   count: 2
@@ -384,12 +386,12 @@ services:
 - name: v2-content-annotator-blue-sidekick@.service
   count: 1
 - name: v2-content-annotator-blue@.service
-  version: v22
+  version: v24
   count: 1
 - name: v2-content-annotator-red-sidekick@.service
   count: 1
 - name: v2-content-annotator-red@.service
-  version: v22
+  version: v24
   count: 1
 - name: varnish-sidekick@.service
   count: 2
