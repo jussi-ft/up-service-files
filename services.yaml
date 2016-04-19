@@ -1,19 +1,9 @@
 services:
-- name: aggregate-healthcheck-sidekick@.service
-  count: 1
-- name: aggregate-healthcheck@.service
-  version: v1.0.7
-  count: 1
 - name: diamond.service
 - name: elb-dns-registrator.service
   version: v2.0.1
 - name: elb-presence@.service
   count: 2
-- name: fleet-unit-healthcheck-sidekick.service
-- name: fleet-unit-healthcheck.service
-  version: 1.0.1
-- name: image-cleaner.service
-  version: 1.0.0
 - name: kafka-rest-proxy-sidekick.service
 - name: kafka-rest-proxy.service
   version: v1.0.0
