@@ -13,7 +13,7 @@ ExecStart=/bin/sh -c "\
     etcdctl set /ft/config/mongodb/%i/host $MONGODB_IP --ttl 600; \
     etcdctl set /ft/config/mongodb/%i/port $MONGODB_PORT --ttl 600; \
     etcdctl set /ft/config/mongodb/%i/admin_port $MONGODB_ADMIN_PORT --ttl 600; \
-    sleep 120; \
+    sleep 125; \
   done"
 ExecStop=/usr/bin/etcdctl rm --recursive /ft/config/mongodb/%i
 
