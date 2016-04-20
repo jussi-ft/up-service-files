@@ -40,3 +40,6 @@ services:
   version: v47
   count: 2
   sequentialDeployment: true
+- name: elb-presence@.service
+  count: 2
+  sequentialDeployment: true
