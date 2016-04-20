@@ -14,7 +14,7 @@ ExecStart=/bin/sh -c '\
   /usr/bin/docker run --rm --name %p -e AWS_ACCESS_KEY=$AWS_ACCESS_KEY -e AWS_SECRET_KEY=$AWS_SECRET_KEY -e AWS_REGION=$AWS_REGION -e ELB_NAME=$ELB_NAME quay.io/coreos/elb-presence'
 ExecStop=/usr/bin/docker stop %p
 Restart=on-failure
-RestartSec=68
+RestartSec=70
 
 [X-Fleet]
 MachineOf=varnish@%i.service
