@@ -18,7 +18,7 @@ ExecStart=/bin/sh -c "\
   done"
 ExecStop=/usr/bin/docker stop -t 3 %p
 Restart=on-failure
-RestartSec=65
+RestartSec=64
 Nice=5
 IOSchedulingClass=best-effort
 IOSchedulingPriority=7
