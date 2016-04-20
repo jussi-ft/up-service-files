@@ -5,8 +5,8 @@ services:
   version: v1.0.7
   count: 1
 - name: diamond.service
-- name: elb-presence@.service
-  count: 2
+- name: elb-dns-registrator.service
+  version: v2.0.1
 - name: fleet-unit-healthcheck-sidekick.service
 - name: fleet-unit-healthcheck.service
   version: 1.0.1
