@@ -34,3 +34,9 @@ services:
   version: v1.1.0
 - name: mongo-backup.service
   desiredState: loaded
+- name: document-store-api@.service
+  version: v47
+  count: 2
+  sequentialDeployment: true
+- name: document-store-api-sidekick@.service
+  count: 2
