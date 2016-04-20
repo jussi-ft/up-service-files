@@ -9,6 +9,7 @@ ExecStart=/bin/sh -c '\
   etcdctl mkdir /ft/services/public-content-by-concept-api/servers; \
   etcdctl set 	/ft/healthcheck/public-content-by-concept-api-%i/path 		/__health; \
   etcdctl set 	/ft/healthcheck/public-content-by-concept-api-%i/categories 	read; \
+  etcdctl set   /vulcand/backends/public-services-content-by-concept/backend \'{\"Type\": \"http\", \"Settings\": {\"KeepAlive\": {\"MaxIdleConnsPerHost\": 256, \"Period\": \"35s\"}}}\'; \
   etcdctl set 	/vulcand/frontends/public-services-content-by-concept/frontend 	\'{"Type": "http", "BackendId": "vcb-public-content-by-concept-api", "Route": "PathRegexp(`^\/content.*isAnnotatedBy=.*$`) && Host(`public-services`)"}\'; \
   while true; do \
     PORT=`[ $PORT ] && echo $PORT || echo $(/usr/bin/docker port public-content-by-concept-api-%i 8080 | cut -d":" -f2)`; \
