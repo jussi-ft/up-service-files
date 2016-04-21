@@ -155,7 +155,7 @@ services:
 - name: methode-article-transformer-sidekick@.service
   count: 2
 - name: methode-article-transformer@.service
-  version: v40
+  version: v43
   count: 2
 - name: methode-content-importer-sidekick@.service
   count: 2
@@ -429,7 +429,7 @@ services:
   count: 2
   sequentialDeployment: true
 - name: vulcan-config-builder.service
-  version: v1.0.6
+  version: v1.1.0
 - name: vulcan.service
   version: v1.1.0
 - name: wordpress-article-transformer-sidekick@.service
