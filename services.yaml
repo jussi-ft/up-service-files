@@ -42,9 +42,9 @@ services:
   count: 2
 - name: elb-presence@.service
   count: 2
+  sequentialDeployment: true 
 - name: varnish-sidekick@.service
   count: 2
-  sequentialDeployment: true 
 - name: varnish@.service
   version: v63
   count: 2
