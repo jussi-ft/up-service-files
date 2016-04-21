@@ -25,7 +25,7 @@ ExecStart=/bin/bash -c 'ENV=$(/usr/bin/etcdctl get /ft/config/environment_tag); 
 
 ExecStop=/usr/bin/docker stop -t 3 %p-%i
 Restart=on-failure
-RestartSec=60
+RestartSec=61
 
 [X-Fleet]
 Conflicts=aggregate-healthcheck@*.service
