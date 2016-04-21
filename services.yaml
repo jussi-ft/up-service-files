@@ -42,4 +42,3 @@ services:
   count: 2
 - name: elb-presence@.service
   count: 2
-  sequentialDeployment: true
