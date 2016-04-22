@@ -45,3 +45,6 @@ services:
 - name: varnish@.service
   version: v63
   count: 2
+- name: elb-presence@.service
+  count: 2
+  sequentialDeployment: true 
