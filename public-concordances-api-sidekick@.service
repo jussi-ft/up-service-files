@@ -18,7 +18,9 @@ ExecStart=/bin/sh -c '\
     sleep 5; \
   done'
 
-ExecStop=/usr/bin/etcdctl rm /ft/services/public-concordances-api/servers/%i
+ExecStop=/bin/sh -c '\
+  export SERVICE=$(echo %p | sed "s/-sidekick//g"); \
+  etcdctl rm /ft/services/$SERVICE/servers/%i;'
 Restart=on-failure
 RestartSec=60
 

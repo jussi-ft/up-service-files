@@ -5,6 +5,7 @@ After=public-content-by-concept-api@%i.service
 
 [Service]
 ExecStart=/bin/sh -c '\
+  export SERVICE=$(echo %p | sed "s/-sidekick//g"); \
   etcdctl set	/ft/services/$SERVICE/healthcheck  	true; \
   etcdctl mkdir /ft/services/$SERVICE/servers; \
   etcdctl set 	/ft/healthcheck/$SERVICE-%i/path /__health; \
@@ -16,7 +17,9 @@ ExecStart=/bin/sh -c '\
     sleep 5; \
   done'
 
-ExecStop=/usr/bin/etcdctl rm /ft/services/$SERVICE/servers/%i
+ExecStop=/bin/sh -c '\
+  export SERVICE=$(echo %p | sed "s/-sidekick//g"); \
+  etcdctl rm /ft/services/$SERVICE/servers/%i;'
 Restart=on-failure
 RestartSec=60
 
