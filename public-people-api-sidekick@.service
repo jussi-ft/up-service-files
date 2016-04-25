@@ -19,9 +19,9 @@ ExecStart=/bin/sh -c "\
   done; \
   etcdctl set /ft/services/$SERVICE/servers/%i http://%H:$PORT;"
 
-ExecStop=/bin/sh -c '\ 
+ExecStop=/bin/sh -c "\ 
   export SERVICE=$(echo %p | sed "s/-sidekick//g"); \
-  etcdctl rm /ft/services/$SERVICE/servers/%i;'
+  etcdctl rm /ft/services/$SERVICE/servers/%i;"
 Restart=on-failure
 RestartSec=60
 
