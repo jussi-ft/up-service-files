@@ -16,12 +16,6 @@ services:
 - name: kafka-rest-proxy.service
   version: v1.0.0
 - name: kafka.service
-- name: mongodb-all.service
-- name: mongodb-configurator.service
-- name: mongodb-sidekick@.service
-  count: 3
-- name: mongodb@.service
-  count: 3
 - name: nativerw-sidekick@.service
   count: 2
 - name: nativerw@.service
