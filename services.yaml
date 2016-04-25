@@ -37,7 +37,7 @@ services:
 - name: document-store-api@.service
   version: v47
   count: 2
-  sequentialDeployment: true
+  sequentialDeployment: false
 - name: document-store-api-sidekick@.service
   count: 2
 - name: varnish-sidekick@.service
