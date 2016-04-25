@@ -14,7 +14,7 @@ ExecStart=/bin/bash -c '\
   /usr/bin/docker run --rm --name=%p -e GRAPHITE_HOST=graphite.ft.com -e GRAPHITE_PORT=2003 -e DOCKER_HOSTNAME=$ENV.$HOSTNAME_SLICED -e INTERVAL=60 -v /proc:/host_proc:ro -v /var/run/docker.sock:/var/run/docker.sock:ro coco/coco-diamond'
 ExecStopPost=-/usr/bin/docker rm -f %p
 Restart=on-failure
-RestartSec=60
+RestartSec=61
 
 [Install]
 WantedBy=multi-user.target

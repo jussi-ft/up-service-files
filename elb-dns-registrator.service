@@ -8,7 +8,7 @@ Environment="DOCKER_APP_VERSION=latest"
 # Change killmode from "control-group" to "none" to let Docker remove
 # work correctly.
 KillMode=none
-ExecStart=/bin/sh -c " \
+ExecStart=/bin/sh -c  " \
   ENV=$(/usr/bin/etcdctl get /ft/config/environment_tag); \
   docker run --rm --name %p --env=\"ETCD_PEERS=http://%H:2379\" --env=\"DOMAINS=$ENV-up,$ENV-up-read\" coco/coco-elb-dns-registrator:$DOCKER_APP_VERSION"
 

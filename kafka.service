@@ -19,7 +19,7 @@ ExecStartPost=/bin/sh -c "\
   etcdctl set /ft/config/kafka/ip $KAFKA_IP; \
   etcdctl set /ft/config/kafka/port 9092;"
 Restart=on-failure
-RestartSec=120
+RestartSec=121
 
 [X-Fleet]
 Conflicts=kafka.service

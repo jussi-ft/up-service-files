@@ -16,4 +16,4 @@ ExecStartPre=/bin/bash -c "/usr/bin/docker pull coco/coco-fleet-unit-healthcheck
 ExecStart=/bin/bash -c "/usr/bin/docker run --rm --name=%p -p 8080 --env=\"FLEET_ENDPOINT=http://$HOSTNAME:49153\" coco/coco-fleet-unit-healthcheck:$DOCKER_APP_VERSION"
 ExecStopPost=-/usr/bin/docker rm -f %p
 Restart=on-failure
-RestartSec=60
+RestartSec=61
