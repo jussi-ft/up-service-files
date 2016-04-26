@@ -10,8 +10,6 @@ services:
 - name: fleet-unit-healthcheck-sidekick.service
 - name: fleet-unit-healthcheck.service
   version: 1.0.1
-- name: image-cleaner.service
-  version: 1.0.0
 - name: kafka-rest-proxy-sidekick.service
 - name: kafka-rest-proxy.service
   version: v1.0.0
