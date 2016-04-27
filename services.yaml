@@ -38,6 +38,6 @@ services:
   sequentialDeployment: false
 - name: document-store-api-sidekick@.service
   count: 2
+- name: elb-presence@.service
+  count: 2
   sequentialDeployment: false
-- name: image-cleaner.service
-  version: 1.0.0
